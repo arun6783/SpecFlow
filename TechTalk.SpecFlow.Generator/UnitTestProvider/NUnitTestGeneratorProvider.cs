@@ -31,13 +31,13 @@ namespace TechTalk.SpecFlow.Generator.UnitTestProvider
             CodeDomHelper = codeDomHelper;
         }
 
-        public void SetTestClass(TestClassGenerationContext generationContext, string featureTitle, string featureDescription)
+        public virtual void SetTestClass(TestClassGenerationContext generationContext, string featureTitle, string featureDescription)
         {
             CodeDomHelper.AddAttribute(generationContext.TestClass, TESTFIXTURE_ATTR);
             CodeDomHelper.AddAttribute(generationContext.TestClass, DESCRIPTION_ATTR, featureTitle);
         }
 
-        public void SetTestClassCategories(TestClassGenerationContext generationContext, IEnumerable<string> featureCategories)
+        public virtual void SetTestClassCategories(TestClassGenerationContext generationContext, IEnumerable<string> featureCategories)
         {
             CodeDomHelper.AddAttributeForEachValue(generationContext.TestClass, CATEGORY_ATTR, featureCategories);
         }
